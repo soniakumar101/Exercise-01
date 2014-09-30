@@ -9,40 +9,33 @@
 #       congratulate player
 print "Hi! Welcome to our guessing game!"
 print "Please, tell us your name (real names only)"
-print "This is a great game! You'll love it!!"
 name = raw_input()
 number = 42
 print "Guess a number between 1 and a 100"
-number = 0
+tries = 0
 while True:
-    guess = int(raw_input())
-    number += 1
-    if guess < 100 and guess > 1:
-            if guess < 42:
+    guess = raw_input()
+    tries += 1
+    if ord(guess[0]) < 64 and ord(guess[0]) > 123:
+        guess = int(guess)    
+        if guess < 100 and guess > 1:
+            if guess < number:
                 print "Try Again %s! Your guess is too low" % name
-            elif guess > 42:
+            elif guess > number:
                 print "Try Again %s! Your guess is too high" % name
             else:
-                if number <= 5:
-                    print "HELLYA! YOU GOT IT IN %s TRIES!!!" % number
-                    print "Would you like to play again?"
-                    answer = raw_input()
-                    if answer == "yes":
-                        print "Guess a number between 1 and a 100"
-                        number = 0 
-                        continue
-                    if answer == "no":
-                        break 
+                if tries <= 5:
+                    print "HELLYA! YOU GOT IT IN %s TRIES!!!" % tries
                 else:
-                    print "You took a while.....to guess %s tries..." % number
-                    print "Would you like to play again?"
-                    answer = raw_input()
-                    if answer == "yes":
-                        print "Guess a number between 1 and a 100"
-                        number = 0 
-                        continue
-                    if answer == "no":
-                        break 
+                    print "You took a while.....to guess %s tries..." % tries
+                print "Would you like to play again?"
+                answer = raw_input()
+                if answer == "yes":
+                    print "Guess a number between 1 and a 100"
+                    tries = 0 
+                    continue
+                if answer == "no":
+                    break 
     else: 
         print "Please enter a valid number you retard"
 
