@@ -9,6 +9,7 @@
 #       congratulate player
 print "Hi! Welcome to our guessing game!"
 print "Please, tell us your name (real names only)"
+print "This is a great game! You'll love it!!"
 name = raw_input()
 number = 42
 print "Guess a number between 1 and a 100"
