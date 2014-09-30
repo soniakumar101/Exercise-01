@@ -23,10 +23,28 @@ while True:
             elif guess > 42:
                 print "Try Again %s! Your guess is too high" % name
             else:
-                print "HELLYA! YOU GOT IT IN %s TRIES!!!" % number
-                break 
+                if number <= 5:
+                    print "HELLYA! YOU GOT IT IN %s TRIES!!!" % number
+                    print "Would you like to play again?"
+                    answer = raw_input()
+                    if answer == "yes":
+                        print "Guess a number between 1 and a 100"
+                        number = 0 
+                        continue
+                    if answer == "no":
+                        break 
+                else:
+                    print "You took a while.....to guess %s tries..." % number
+                    print "Would you like to play again?"
+                    answer = raw_input()
+                    if answer == "yes":
+                        print "Guess a number between 1 and a 100"
+                        number = 0 
+                        continue
+                    if answer == "no":
+                        break 
     else: 
-        print "Please enter a valid number"
+        print "Please enter a valid number you retard"
 
 
 
