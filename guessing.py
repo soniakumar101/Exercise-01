@@ -10,7 +10,7 @@ while True:
     tries += 1
     if not (ord(guess[0]) > 64 and ord(guess[0]) < 123):
         guess = int(guess)    
-        if guess < 100 and guess > 1:
+        if guess <= 100 and guess >= 1:
             if guess < number:
                 print "Try Again %s! Your guess is too low" % name
             elif guess > number:
@@ -22,6 +22,9 @@ while True:
                     print "You took a while.....to guess %s tries..." % tries
                 print "Would you like to play again?"
                 answer = raw_input()
+                while not(answer == "yes" or answer == "no"):
+                    print "Guys...seriously...pick yes or no"
+                    answer = raw_input()
                 if answer == "yes":
                     print "Guess a number between 1 and a 100"
                     tries = 0 
